@@ -9,7 +9,7 @@ export class AppService {
 
   getToggles() {
     
-     this.http.get('https://toggle-manager-api.herokuapp.com/api/users?access_token=8d5df920-452f-46d8-984f-0b4fb50dd8eb')
+     this.http.get('https://toggle-manager-api.herokuapp.com/api/users?access_token=23e9a9ac-ae4a-481f-8460-1a07e909671e')
         .toPromise()
         .then(response => console.log(response))
         .catch(err => Promise.reject(err.message || err));
