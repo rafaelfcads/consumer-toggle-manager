@@ -5,15 +5,15 @@
       </header>
       <main class="mdl-layout__content">
 
-        <div class="mdl-layout__tab-panel is-active" id="overview" *ngFor="let toggle of toggles">
+        <div class="mdl-layout__tab-panel is-active" id="overview" *ngFor="let toggle of user.toggles">
           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
-              <i class="material-icons">play_circle_filled</i>
+              
             </header>
             <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
               <div class="mdl-card__supporting-text">
-                <h4>Nome do Toggle : {{ toggle.name }}</h4>
-                Neste card poderemos testar o uso da API de gestão de toggles. Para tal toggle o seu valor é {{ toggle.value }}
+                <h4>Toggle {{ toggle.name }} pertencente a API {{ user.userName }} vesão {{ user.version }}</h4>
+                Neste card poderemos testar o uso da API de gestão de toggles. Para tal toggle o seu valor é <strong>{{ toggle.value }}</strong>
               </div>
               <div class="mdl-card__actions">
                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" [disabled]="!toggle.value" (click)="executeAction()">
