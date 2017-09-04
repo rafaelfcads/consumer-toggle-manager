@@ -1,7 +1,16 @@
 
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header header-app">
       <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
           <app-header></app-header>
+          <form>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" #classe >
+            <label class="mdl-textfield__label" for="sample3">Digite aqui o Token da API a Consultar...</label>
+          </div>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" (click)="executeAction(classe.value)">
+            Atualizar
+          </button>
+</form>
       </header>
       <main class="mdl-layout__content">
 

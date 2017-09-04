@@ -9,17 +9,15 @@ import { AppService } from './app.service';
 })
 export class AppComponent implements OnInit {
 
-  user;
+  user = { toggles: []};
   
   constructor(private appService: AppService) { }
 
   ngOnInit() {
-     this.appService.getToggles()
-      .then((user) => this.user = user);
   }
 
-  executeAction() {
-    this.appService.getToggles()
+  executeAction(token) {
+    this.appService.getToggles(token)
       .then((user) => this.user = user);
   }
 

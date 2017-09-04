@@ -1,3 +1,11 @@
 .mdl-mega-footer {
     margin-top: 60px !important;
 }
+
+.mdl-color--primary {
+    background-color: #424242 !important;
+}
+
+.mdl-textfield__label {
+    color: white !important;
+}

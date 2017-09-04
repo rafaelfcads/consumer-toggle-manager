@@ -8,9 +8,9 @@ export class AppService {
 
   constructor(private http: Http) { }
 
-  getToggles() {
+  getToggles(token) {
      return this.http
-        .get('https://toggle-manager-api.herokuapp.com/api/users/59abcf98734d1d25a0f5dfba?access_token=dc8e27a5-f7ce-47dd-8ff0-52f97d257933')
+        .get('https://toggle-manager-api.herokuapp.com/api/users/59abcf98734d1d25a0f5dfba?access_token=' + token)
         .toPromise()
         .then(user => user.json())
         .catch(error => Promise.reject(error.message || error));
