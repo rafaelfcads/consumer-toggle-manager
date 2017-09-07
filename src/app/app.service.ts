@@ -15,6 +15,7 @@ export class AppService {
     headers.append('Access-Control-Allow-Methods', 'GET');
     headers.append('Access-Control-Allow-Origin', 'https://toggle-manager-api.herokuapp.com');
     headers.append('Access-Control-Allow-Credentials', 'true');
+    headers.append('Authorization', 'Basic bXktdHJ1c3RlZC1jbGllbnQ6c2VjcmV0');
 
     return this.http
       .get('https://toggle-manager-api.herokuapp.com/api/users/59abcf98734d1d25a0f5dfba?access_token=' + token, {headers: headers})
