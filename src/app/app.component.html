@@ -2,40 +2,36 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header header-app">
       <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
           <app-header></app-header>
-          <form>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" #classe >
-            <label class="mdl-textfield__label" for="sample3">Digite aqui o Token da API a Consultar...</label>
-          </div>
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" (click)="executeAction(classe.value)">
-            Atualizar
-          </button>
-</form>
       </header>
-      <main class="mdl-layout__content">
-
-        <div class="mdl-layout__tab-panel is-active" id="overview" *ngFor="let toggle of user.toggles">
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
-              
-            </header>
-            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
-              <div class="mdl-card__supporting-text">
-                <h4>Toggle {{ toggle.name }} pertencente a API {{ user.userName }} vesão {{ user.version }}</h4>
-                Neste card poderemos testar o uso da API de gestão de toggles. Para tal toggle o seu valor é <strong>{{ toggle.value }}</strong>
-              </div>
-              <div class="mdl-card__actions">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" [disabled]="!toggle.value" (click)="executeAction()">
-                  Botão para Teste do Toggle
-                </button>
-              </div>
+      <main class="mdl-layout__content">   
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--6-col">
+              <app-chartpie 
+              [title]="'Visão Supermecardo'"
+              [dataProvider]='[{
+                  "title": "Valor Consumido",
+                  "valor": 50
+                },
+                {
+                  "title": "Disponivel para Consumo",
+                  "valor": 50
+                }
+              ]'></app-chartpie>
             </div>
-          </section>
-        </div>
-        
-        <footer class="mdl-mega-footer">
-          <app-footer></app-footer>
-        </footer>
+            <div class="mdl-cell mdl-cell--6-col">
+                <app-chartpie 
+                  [title]="'Visão Abastacimento'"
+                  [dataProvider]='[{
+                      "title": "Valor Consumido",
+                      "valor": 80
+                    },
+                    {
+                      "title": "Disponivel para Consumo",
+                      "valor": 50
+                    }
+                  ]'></app-chartpie>
+            </div>
+          </div>     
       </main>
     </div>
 
